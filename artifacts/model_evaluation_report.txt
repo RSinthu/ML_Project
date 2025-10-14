@@ -1,0 +1,144 @@
+MODEL EVALUATION COMPREHENSIVE REPORT
+============================================================
+
+Evaluation Date: 2025-10-14 21:08:15
+Total Models Evaluated: 6
+
+SUMMARY STATISTICS
+------------------------------
+Best Model: XGBoost
+Best R² Score: 0.9793
+MODEL RANKINGS (By R² Score)
+-----------------------------------
+ 1. XGBoost                   R²: 0.9793
+ 2. Random_Forest_Regressor   R²: 0.9784
+ 3. Decision_Tree_Regressor   R²: 0.9760
+ 4. Linear_Regression         R²: 0.9373
+ 5. Ridge                     R²: 0.9373
+ 6. Lasso                     R²: 0.9373
+
+============================================================
+
+DETAILED MODEL PERFORMANCE
+============================================================
+
+MODEL: XGBoost
+--------------------------------------------------
+Best Parameters: {'learning_rate': 0.1, 'max_depth': 6, 'n_estimators': 100}
+
+Training Performance:
+  R² Score: 0.9818
+  MAE:      286.1593
+  RMSE:     545.1789
+
+Test Performance:
+  R² Score: 0.9793
+  MAE:      295.1541
+  RMSE:     577.7835
+
+Overfitting Analysis:
+  R² Difference: 0.0024
+  Overfitting: No
+
+--------------------------------------------------
+
+MODEL: Random_Forest_Regressor
+--------------------------------------------------
+Best Parameters: {'max_depth': 10, 'min_samples_split': 10, 'n_estimators': 200}
+
+Training Performance:
+  R² Score: 0.9815
+  MAE:      292.4889
+  RMSE:     549.3102
+
+Test Performance:
+  R² Score: 0.9784
+  MAE:      305.8541
+  RMSE:     591.3820
+
+Overfitting Analysis:
+  R² Difference: 0.0031
+  Overfitting: No
+
+--------------------------------------------------
+
+MODEL: Decision_Tree_Regressor
+--------------------------------------------------
+Best Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 10}
+
+Training Performance:
+  R² Score: 0.9798
+  MAE:      306.9365
+  RMSE:     573.4657
+
+Test Performance:
+  R² Score: 0.9760
+  MAE:      322.3902
+  RMSE:     622.5816
+
+Overfitting Analysis:
+  R² Difference: 0.0038
+  Overfitting: No
+
+--------------------------------------------------
+
+MODEL: Linear_Regression
+--------------------------------------------------
+Best Parameters: None
+
+Training Performance:
+  R² Score: 0.9366
+  MAE:      677.1656
+  RMSE:     1016.9490
+
+Test Performance:
+  R² Score: 0.9373
+  MAE:      674.7569
+  RMSE:     1006.6897
+
+Overfitting Analysis:
+  R² Difference: -0.0007
+  Overfitting: No
+
+--------------------------------------------------
+
+MODEL: Ridge
+--------------------------------------------------
+Best Parameters: {'alpha': 0.1}
+
+Training Performance:
+  R² Score: 0.9366
+  MAE:      677.1684
+  RMSE:     1016.9490
+
+Test Performance:
+  R² Score: 0.9373
+  MAE:      674.7599
+  RMSE:     1006.6900
+
+Overfitting Analysis:
+  R² Difference: -0.0007
+  Overfitting: No
+
+--------------------------------------------------
+
+MODEL: Lasso
+--------------------------------------------------
+Best Parameters: {'alpha': 1.0}
+
+Training Performance:
+  R² Score: 0.9366
+  MAE:      678.4491
+  RMSE:     1017.0710
+
+Test Performance:
+  R² Score: 0.9373
+  MAE:      676.2655
+  RMSE:     1006.9047
+
+Overfitting Analysis:
+  R² Difference: -0.0007
+  Overfitting: No
+
+--------------------------------------------------
+

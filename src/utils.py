@@ -6,7 +6,7 @@ from src.logger import logging
 from sklearn.metrics import r2_score,mean_squared_error,mean_absolute_error
 import numpy as np
 
-def SaveModel(filepath, obj):
+def save_model(filepath, obj):
     try:
         dir = os.path.dirname(filepath)
 

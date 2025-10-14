@@ -6,7 +6,7 @@ from sklearn.compose import ColumnTransformer
 from src.logger import logging
 from src.exception import CustomException
 from dataclasses import dataclass
-from utils import SaveModel
+from src.utils import save_model
 import os
 import pandas as pd
 import numpy as np
@@ -14,7 +14,7 @@ import sys
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path = os.join('artifacts','preprocessor.pkl')
+    preprocessor_obj_file_path = os.path.join('artifacts','preprocessor.pkl')
     raw_data_path = os.path.join('artifacts','data.csv')
 
 class DataTransformation:
@@ -92,19 +92,18 @@ class DataTransformation:
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr = preprocessing_obj.fit_transform(input_feature_test_df)
 
-            train_arr = np.c_(input_feature_train_arr,np.array(target_feature_train_df))
-            test_arr = np.c_(input_feature_test_arr,np.array(target_feature_test_df))
+            train_arr = np.c_[input_feature_train_arr,np.array(target_feature_train_df)]
+            test_arr = np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
 
-            SaveModel(self.data_transformation_config.preprocessor_obj_file_path, preprocessing_obj)
+            save_model(self.data_transformation_config.preprocessor_obj_file_path, preprocessing_obj)
 
             return (
                 train_arr,
-                test_arr,
-                self.data_transformation_config.preprocessor_obj_file_path
+                test_arr
             )
 
         except Exception as e:
-            logging("Error occured in initiate data preprocessing")
+            logging.info("Error occured in initiate data preprocessing")
             raise CustomException(e,sys)
  
             

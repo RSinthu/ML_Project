@@ -4,4 +4,5 @@ pandas
 dill
 xgboost
 flask
+scikit-learn
 # -e .
