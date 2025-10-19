@@ -4,5 +4,6 @@ pandas
 dill
 xgboost
 flask
+flask_cors
 scikit-learn
 # -e .

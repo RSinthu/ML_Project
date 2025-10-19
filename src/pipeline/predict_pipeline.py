@@ -1,8 +1,9 @@
-from src.utils import SaveModel, load_model
+from src.utils import load_model
 from src.exception import CustomException
 from src.logger import logging
 import os
 import sys
+import pandas as pd
 
 
 class Predict_Pipeline:
