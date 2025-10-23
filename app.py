@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import cross_origin
 from src.pipeline.predict_pipeline import CustomData, Predict_Pipeline
+import os
 
 
 app = Flask(__name__)
@@ -36,4 +37,5 @@ def predict_datapoint():
         return render_template('index.html',results=results)
     
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000,debug=True)
+    port = int(os.environ.get("PORT", 80))
+    app.run(host="0.0.0.0", port=port)
